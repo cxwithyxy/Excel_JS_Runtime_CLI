@@ -1,16 +1,8 @@
 #coding=utf-8
 
 import argparse
-import importlib
+import CLIS.create
 
-# parser = argparse.ArgumentParser()
-# parser.add_argument("-create")
-# args = parser.parse_args()
-# print args
-# a=importlib.import_module("CLIS.a")
-# b=importlib.import_module("CLIS.b")
-import CLIS.a as a
-import CLIS.b as b
+parser = argparse.ArgumentParser()
 
-print a.bb
-print b.bb
+CLIS.create.handle_CLI(parser)
