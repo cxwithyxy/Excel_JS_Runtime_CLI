@@ -7,9 +7,10 @@ import importlib
 # parser.add_argument("-create")
 # args = parser.parse_args()
 # print args
-a=importlib.import_module("CLIS.a")
-b=importlib.import_module("CLIS.b")
-
+# a=importlib.import_module("CLIS.a")
+# b=importlib.import_module("CLIS.b")
+import CLIS.a as a
+import CLIS.b as b
 
 print a.bb
 print b.bb
