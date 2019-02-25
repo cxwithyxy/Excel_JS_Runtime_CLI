@@ -6,7 +6,4 @@ import CLIS.spread
 
 parser = argparse.ArgumentParser()
 
-CLIS.create.handle_CLI(parser)()
-CLIS.spread.handle_CLI(parser)
-
-print parser.parse_args()
+CLIS.create.base(parser).handle_run()

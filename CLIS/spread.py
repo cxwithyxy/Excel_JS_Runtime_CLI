@@ -6,4 +6,3 @@ def run():
 def handle_CLI(parser):
     parser.add_argument("-spread")
     return run
-    pass

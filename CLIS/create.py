@@ -1,16 +1,10 @@
 #coding=utf-8
 
-the_parser = None
+import CLIS.CLISCMDBASE
 
-def run():
-    # if the_parser.parse_args().get("create"):
-    argu = vars(the_parser.parse_args())
-    print argu[__name__.split(".").pop()]
-    pass
+class base(CLIS.CLISCMDBASE.base):
 
-def handle_CLI(parser):
-    global the_parser
-    the_parser = parser
-    the_parser.add_argument("-create")
-    return run
-    pass
+    name = "create"
+
+    def run(self):
+        print self.get_argu()
