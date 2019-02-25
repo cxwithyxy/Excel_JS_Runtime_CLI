@@ -1,8 +1,10 @@
 #coding=utf-8
 
-def run():
-    pass
+import CLIS.CLISCMDBASE
 
-def handle_CLI(parser):
-    parser.add_argument("-spread")
-    return run
+class base(CLIS.CLISCMDBASE.base):
+
+    name = "spread"
+
+    def run(self):
+        print self.get_argu()
