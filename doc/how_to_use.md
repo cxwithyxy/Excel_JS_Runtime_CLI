@@ -10,9 +10,9 @@ python Excel_JS_Runtime_CLI.py -create myfristproject
 
 工作文件会包含以下文件：
 
-1. anynameifyoulike.xlsm
+1. myfristproject.xlsm
 2. src 文件夹（其中包含所有的 javascript 文件）
-3. ~~Excel_JS_Runtime_CLI.setting.json~~
+3. Excel_JS_Runtime_CLI.ini
 
 ------
 

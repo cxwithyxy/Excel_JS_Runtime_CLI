@@ -1,3 +1,6 @@
 [submodule "py2exe_packer"]
 	path = py2exe_packer
 	url = https://gitee.com/cxwithyxy/py2exe_packer.git
+[submodule "mylib/PythonSingleton"]
+	path = mylib/PythonSingleton
+	url = https://github.com/cxwithyxy/PythonSingleton.git
