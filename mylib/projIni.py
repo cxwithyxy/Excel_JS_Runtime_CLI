@@ -15,6 +15,9 @@ class projIni(SLT.Singleton):
         self.config = configparser.ConfigParser()
         self.config.read("ini", encoding="utf-8")
 
+    def get_saving_path(self):
+        return self.base_path + self.config_file_name
+
     def set_base_path(self, base_path):
         self.base_path = base_path
 
@@ -24,7 +27,7 @@ class projIni(SLT.Singleton):
         self.save_ini_file()
 
     def save_ini_file(self):
-        self.config.write(open(self.config_file_name, "w"))
+        self.config.write(open(self.get_saving_path(), "w"))
 
 
 # config.read("ini", encoding="utf-8")
