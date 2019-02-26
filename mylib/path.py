@@ -12,3 +12,6 @@ def mkdir(path_from_argu):
 
 def join_path(path_1, path_2):
     return str(pathlib.PureWindowsPath(path_1).joinpath(path_2))
+
+def abs_path(path):
+    return pathlib.Path(path).resolve()

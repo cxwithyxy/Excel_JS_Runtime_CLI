@@ -2,6 +2,8 @@
 
 import configparser
 import mylib.PythonSingleton.Singleton as SLT
+import os
+import mylib.path
 
 class projIni(SLT.Singleton):
 
@@ -13,10 +15,10 @@ class projIni(SLT.Singleton):
 
     def __Singleton_Init__(self):
         self.config = configparser.ConfigParser()
-        self.config.read("ini", encoding="utf-8")
+        self.config.read(self.get_saving_path(), encoding="utf-8")
 
     def get_saving_path(self):
-        return self.base_path + self.config_file_name
+        return os.getcwd() + "/" + self.base_path + self.config_file_name
 
     def set_base_path(self, base_path):
         self.base_path = base_path
@@ -29,10 +31,11 @@ class projIni(SLT.Singleton):
     def save_ini_file(self):
         self.config.write(open(self.get_saving_path(), "w"))
 
+    def read_proj_name(self):
+        return self.config.get("project", "name")
+    
+    def get_xlsm_full_name(self):
+        return self.read_proj_name() + ".xlsm"
 
-# config.read("ini", encoding="utf-8")
-# add_section
-# config.set("db", "db_port", "69")  #修改db_port的值为69
-# config.write(open("ini", "w"))
-
-# print config
+    def get_xlsm_full_path(self):
+        return mylib.path.abs_path(self.get_xlsm_full_name())
