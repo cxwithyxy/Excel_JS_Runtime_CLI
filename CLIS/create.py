@@ -4,6 +4,7 @@ import CLIS.CLISCMDBASE
 import pathlib
 import mylib.path
 import requests
+import mylib.projIni as PJI
 
 
 class base(CLIS.CLISCMDBASE.base):
@@ -15,6 +16,7 @@ class base(CLIS.CLISCMDBASE.base):
     def run(self):
         self.make_path()
         self.down_xlsm()
+        self.make_ini_file()
 
     def make_path(self):
         mylib.path.mkdir(self.get_argu())
@@ -29,3 +31,6 @@ class base(CLIS.CLISCMDBASE.base):
             if chunk:
                 f.write(chunk)
 
+    def make_ini_file(self):
+        PJI.projIni().set_base_path(self.get_argu() + "/")
+        PJI.projIni().init_config_file(self.get_argu())
