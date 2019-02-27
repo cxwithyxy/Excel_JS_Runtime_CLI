@@ -28,5 +28,13 @@ class XlsmHub(SLT.Singleton):
         return self.xlsm_obj.sheets["BASE_CODE_LIB"]
     
     def output_js_file(self):
-        print self.js_hub.read_js_file(4)
+        count = 1
+        js_file_list = []
+        while True:
+            temp_file = self.js_hub.read_js_file(count)
+            if temp_file == False:
+                break
+            js_file_list.append(temp_file)
+            count += 1
+        # print len(js_file_list)
         pass

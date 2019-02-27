@@ -1,5 +1,7 @@
 #coding=utf-8
 
+import jsFile
+
 class JSHub():
     sheet = None
     
@@ -7,7 +9,9 @@ class JSHub():
         self.sheet = sheet
 
     def read_js_file(self, row):
-        print self.get_js_name(row)
+        name = self.get_js_name(row)
+        if name == "None":
+            return False
         count = 2
         reading_str = ""
         while True:
@@ -16,8 +20,10 @@ class JSHub():
                 break
             count += 1
             reading_str += temp
-        print reading_str
-        return 111
+        js_file = jsFile.JSFile()
+        js_file.name = name
+        js_file.code = reading_str
+        return js_file
 
     def read_cell(self, row, col):
         return str(self.sheet.range((row,col)).value)
