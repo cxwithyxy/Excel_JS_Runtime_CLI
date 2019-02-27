@@ -15,3 +15,6 @@ def join_path(path_1, path_2):
 
 def abs_path(path):
     return str(pathlib.Path(path).resolve())
+
+def get_js_saving_path_base_on_xlsm(xlsm_path):
+    return str(pathlib.PureWindowsPath(xlsm_path).parent.joinpath("src"))

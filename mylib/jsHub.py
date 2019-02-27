@@ -22,7 +22,7 @@ class JSHub():
             reading_str += temp
         js_file = jsFile.JSFile()
         js_file.name = name
-        js_file.code = reading_str
+        js_file.decode_str_into_code(reading_str)
         return js_file
 
     def read_cell(self, row, col):
