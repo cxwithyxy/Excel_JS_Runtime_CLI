@@ -8,9 +8,16 @@ class JSHub():
 
     def read_js_file(self, row):
         print self.get_js_name(row)
-        print "1 " + self.read_cell(row,2)
-        print "2 " + self.read_cell(row,3)
-        print "3 " + self.read_cell(row,4)
+        count = 2
+        reading_str = ""
+        while True:
+            temp = self.read_cell(row,count)
+            if temp == "None":
+                break
+            count += 1
+            reading_str += temp
+        print reading_str
+        return 111
 
     def read_cell(self, row, col):
         return str(self.sheet.range((row,col)).value)
