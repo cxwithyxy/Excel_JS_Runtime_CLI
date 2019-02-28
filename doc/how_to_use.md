@@ -24,6 +24,12 @@ python Excel_JS_Runtime_CLI -spread here
 
 当cd到工作文件夹中时，可以使用该命令 -spread here 把当前文件夹中的xlsm文件的 js 文件保存到 src文件夹中
 
+```
+python Excel_JS_Runtime_CLI -spread myfirstproject.xlsm
+```
+
+把 xlsm 文件 变成 工作文件夹
+
 ------
 
 
