@@ -18,3 +18,9 @@ def abs_path(path):
 
 def get_js_saving_path_base_on_xlsm(xlsm_path):
     return str(pathlib.PureWindowsPath(xlsm_path).parent.joinpath("src"))
+
+def get_file_name_without_suffixs(file_path):
+    return pathlib.PureWindowsPath(file_path).name.split(".")[0]
+
+def is_exist(path):
+    return pathlib.Path(path).exists()
