@@ -5,7 +5,6 @@ import mylib.projIni as PJI
 import mylib.xlsmHub as XH
 import create
 import mylib.path
-import unipath
 
 class base(CLIS.CLISCMDBASE.base):
 
@@ -24,7 +23,7 @@ class base(CLIS.CLISCMDBASE.base):
             exit()
         proj_name = mylib.path.get_file_name_without_suffixs(xlsm_path)
         create.base().make_path(proj_name)
-        unipath.Path(xlsm_path).move(proj_name + "/" + xlsm_path)
+        mylib.path.move_path(xlsm_path, proj_name + "/" + xlsm_path)
         create.base().make_ini_file(proj_name)
         create.base().spread_xlsm(proj_name)
 
