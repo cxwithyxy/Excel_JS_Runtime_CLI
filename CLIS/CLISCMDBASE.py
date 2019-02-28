@@ -1,13 +1,13 @@
 #coding=utf-8
 
-import pathlib
+import mylib.PythonSingleton.Singleton as SLT
 
-class base():
+class base(SLT.Singleton):
     
     parser = None
     name = None
 
-    def __init__(self, parser):
+    def __Singleton_Init__(self, parser = None):
         self.parser = parser
         parser.add_argument("-" + self.name)
         

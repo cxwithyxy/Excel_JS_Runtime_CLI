@@ -5,6 +5,7 @@ import pathlib
 import mylib.path
 import requests
 import mylib.projIni as PJI
+import spread
 
 
 class base(CLIS.CLISCMDBASE.base):
@@ -17,6 +18,7 @@ class base(CLIS.CLISCMDBASE.base):
         self.make_path()
         self.down_xlsm()
         self.make_ini_file()
+        self.spread_xlsm()
 
     def make_path(self):
         mylib.path.mkdir(self.get_argu())
@@ -34,3 +36,8 @@ class base(CLIS.CLISCMDBASE.base):
     def make_ini_file(self):
         PJI.projIni().set_base_path(self.get_argu() + "/")
         PJI.projIni().init_config_file(self.get_argu())
+
+    def spread_xlsm(self):
+        spread.base().spread_xlsm(
+            str(mylib.path.join_path(self.get_argu(), self.get_argu() + ".xlsm"))
+        )
