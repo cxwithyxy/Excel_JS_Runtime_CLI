@@ -12,7 +12,6 @@ class base(CLIS.CLISCMDBASE.base):
         argu = self.get_argu()
         if argu == "here":
             self.spread_here()
-        
 
     def spread_here(self):
         xlsm_path = PJI.projIni().get_xlsm_full_path()
