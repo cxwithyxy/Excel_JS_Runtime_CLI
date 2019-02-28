@@ -9,7 +9,12 @@ class base(CLIS.CLISCMDBASE.base):
     name = "spread"
 
     def run(self):
-        print self.get_argu()
+        argu = self.get_argu()
+        if argu == "here":
+            self.spread_here()
+        
+
+    def spread_here(self):
         xlsm_path = PJI.projIni().get_xlsm_full_path()
         XH.XlsmHub().set_xlsm_path(xlsm_path)
         XH.XlsmHub().open()
