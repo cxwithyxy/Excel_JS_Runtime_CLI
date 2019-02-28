@@ -16,6 +16,9 @@ class base(CLIS.CLISCMDBASE.base):
 
     def spread_here(self):
         xlsm_path = PJI.projIni().get_xlsm_full_path()
+        self.spread_xlsm(xlsm_path)
+
+    def spread_xlsm(self, xlsm_path):
         XH.XlsmHub().set_xlsm_path(xlsm_path)
         XH.XlsmHub().open()
         XH.XlsmHub().output_js_file()
