@@ -29,11 +29,17 @@ class XlsmHub(SLT.Singleton):
     
     def output_js_file(self):
         js_saving_path = mylib.path.get_js_saving_path_base_on_xlsm(self.xlsm_path)
-        count = 1
+        row = 1
         while True:
-            temp_file = self.js_hub.read_js_file(count)
+            temp_file = self.js_hub.read_js_file(row)
             if temp_file == False:
                 break
-            count += 1
+            row += 1
             temp_file.save(js_saving_path)
         pass
+
+    def input_js_file(self):
+        # self.js_hub
+        js_src_path = mylib.path.get_js_saving_path_base_on_xlsm(self.xlsm_path)
+        print js_src_path
+        mylib.path.get_all_js_path_from_src(js_src_path)
