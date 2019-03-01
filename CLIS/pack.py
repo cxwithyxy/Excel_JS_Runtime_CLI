@@ -13,6 +13,6 @@ class base(CLIS.CLISCMDBASE.base):
         print argu
         xlsm_path = PJI.projIni().get_xlsm_full_path()
         XH.XlsmHub().set_xlsm_path(xlsm_path)
-        # XH.XlsmHub().open()
+        XH.XlsmHub().open()
         XH.XlsmHub().input_js_file()
-        # XH.XlsmHub().close()
+        XH.XlsmHub().close()

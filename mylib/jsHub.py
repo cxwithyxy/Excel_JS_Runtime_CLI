@@ -1,8 +1,10 @@
 #coding=utf-8
 
 import jsFile
+import mylib.path
 
 class JSHub():
+
     sheet = None
     
     def __init__(self, sheet):
@@ -30,3 +32,12 @@ class JSHub():
     
     def get_js_name(self, row):
         return self.read_cell(row, 1)
+
+    def read_js_file_from_src(self, src_path):
+        jsss =  mylib.path.get_all_js_path_from_src(src_path)
+        print src_path
+        print jsss
+        js_file = jsFile.JSFile()
+        js_file.load_js_file(jsss[5])
+        js_file.rename_by_src_path(src_path + "\\")
+        print js_file.name

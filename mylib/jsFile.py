@@ -21,3 +21,17 @@ class JSFile():
     def decode_str_into_code(self, str):
         self.code = str.replace(u"_等于号_", "=")
 
+    def encode_code(self):
+        return self.code.replace("=", u"_等于号_")
+
+    def load_js_file(self, js_file_path):
+        self.name = js_file_path
+        temp_f = open(js_file_path, mode = "rb")
+        self.code = temp_f.read().decode("utf-8")
+        temp_f.close()
+        # print self.code
+        # print js_file_path
+
+    def rename_by_src_path(self, src_path):
+        self.name = self.name.replace(src_path, "")
+

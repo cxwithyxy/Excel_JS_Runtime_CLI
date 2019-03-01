@@ -39,7 +39,5 @@ class XlsmHub(SLT.Singleton):
         pass
 
     def input_js_file(self):
-        # self.js_hub
         js_src_path = mylib.path.get_js_saving_path_base_on_xlsm(self.xlsm_path)
-        print js_src_path
-        print mylib.path.get_all_js_path_from_src(js_src_path)
+        self.js_hub.read_js_file_from_src(js_src_path)
