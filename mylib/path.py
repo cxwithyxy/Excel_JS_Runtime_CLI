@@ -30,10 +30,12 @@ def move_path(old_path, new_path):
     return unipath.Path(old_path).move(new_path)
 
 def get_all_js_path_from_src(src_path):
-    walking = unipath.Path(src_path).walk(filter  = unipath.FILES)
+    walking = unipath.Path(src_path).walk(filter = unipath.FILES)
+    return_list = []
     while True:
         try:
             temp_js_path = walking.next()
-            print temp_js_path
+            return_list.append(str(temp_js_path))
         except:
             break
+    return return_list
