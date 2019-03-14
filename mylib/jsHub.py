@@ -2,6 +2,7 @@
 
 import jsFile
 import mylib.path
+from multiprocessing.pool import ThreadPool as Pool
 
 class JSHub():
 
@@ -35,11 +36,12 @@ class JSHub():
 
     def read_js_file_from_src(self, src_path):
         jsss =  mylib.path.get_all_js_path_from_src(src_path)
-        print src_path
-        print jsss
-        js_file = jsFile.JSFile()
-        for i in jsss:
-            js_file.load_js_file(i)
+        def pool_do(ipath):
+            js_file = jsFile.JSFile()
+            js_file.load_js_file(ipath)
             js_file.rename_by_src_path(src_path + "\\")
-            print js_file.name
-            print i
+            return js_file
+        pool = Pool()
+        prs = pool.map(pool_do, jsss)
+        pool.close()
+        return prs

@@ -29,8 +29,9 @@ class JSFile():
         temp_f = open(js_file_path, mode = "rb")
         self.code = temp_f.read().decode("utf-8")
         temp_f.close()
-        # print self.code
-        # print js_file_path
+
+    def __repr__(self):
+        return self.name + " -- " + str(len(self.code))
 
     def rename_by_src_path(self, src_path):
         self.name = self.name.replace(src_path, "")
