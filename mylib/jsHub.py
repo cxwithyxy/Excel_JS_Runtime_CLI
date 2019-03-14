@@ -38,6 +38,8 @@ class JSHub():
         print src_path
         print jsss
         js_file = jsFile.JSFile()
-        js_file.load_js_file(jsss[5])
-        js_file.rename_by_src_path(src_path + "\\")
-        print js_file.name
+        for i in jsss:
+            js_file.load_js_file(i)
+            js_file.rename_by_src_path(src_path + "\\")
+            print js_file.name
+            print i
