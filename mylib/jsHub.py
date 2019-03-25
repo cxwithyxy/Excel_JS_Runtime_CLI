@@ -45,3 +45,15 @@ class JSHub():
         prs = pool.map(pool_do, jsss)
         pool.close()
         return prs
+
+    def write_js_file_in_sheet(self, src_path):
+        jsfiles = self.read_js_file_from_src(src_path)
+        writting_order = [
+            "BASE_INIT.js",
+            "CXAMD.js",
+            "UpdataJSFiles.js",
+            "before_RequireJS.min.js",
+            "CX_RequireJS.min.js"
+        ]
+        print jsfiles
+        self.sheet.clear()

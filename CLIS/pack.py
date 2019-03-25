@@ -15,4 +15,4 @@ class base(CLIS.CLISCMDBASE.base):
         XH.XlsmHub().set_xlsm_path(xlsm_path)
         XH.XlsmHub().open()
         XH.XlsmHub().input_js_file()
-        XH.XlsmHub().close()
+        # XH.XlsmHub().close()
