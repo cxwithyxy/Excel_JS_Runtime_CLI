@@ -36,3 +36,8 @@ class JSFile():
     def rename_by_src_path(self, src_path):
         self.name = self.name.replace(src_path, "")
 
+    def write_in_sheet(self, sheet, y, need_encode = False):
+        code_encoded = self.code if(not need_encode) else self.encode_code()
+        print code_encoded
+        loop_count = len(code_encoded) / 32000
+        print loop_count

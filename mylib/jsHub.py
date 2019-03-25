@@ -50,10 +50,11 @@ class JSHub():
         jsfiles = self.read_js_file_from_src(src_path)
         writting_order = [
             "BASE_INIT.js",
-            "CXAMD.js",
-            "UpdataJSFiles.js",
-            "before_RequireJS.min.js",
-            "CX_RequireJS.min.js"
+            "CXAMD.js"
+            # "UpdataJSFiles.js",
+            # "before_RequireJS.min.js",
+            # "CX_RequireJS.min.js"
         ]
         print jsfiles
         self.sheet.clear()
+        jsfiles[2].write_in_sheet(self.sheet, 1, True)
