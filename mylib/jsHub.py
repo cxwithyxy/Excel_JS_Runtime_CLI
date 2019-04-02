@@ -67,3 +67,13 @@ class JSHub():
         for i in writting_base_order:
             jsfiles.get_by_name(i).write_in_sheet(self.sheet, row, True)
             row += 1
+        jsfiles.add_filter_js_names(writting_init_order)
+        jsfiles.add_filter_js_names(writting_base_order)
+        print(jsfiles.filter_jsfile_names)
+        remained_jsfiles = jsfiles.filter_out_JSFileContainer()
+        print(remained_jsfiles)
+        def remained_jsfiles_write_in_sheet(the_jsfile):
+            nonlocal row
+            the_jsfile.write_in_sheet(self.sheet, row, True)
+            row += 1
+        remained_jsfiles.each_do(remained_jsfiles_write_in_sheet)
