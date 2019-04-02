@@ -49,14 +49,21 @@ class JSHub():
 
     def write_js_file_in_sheet(self, src_path):
         jsfiles = self.read_js_file_from_src(src_path)
-        writting_order = [
+        writting_init_order = [
             "BASE_INIT.js",
             "CXAMD.js"
-            # "UpdataJSFiles.js",
-            # "before_RequireJS.min.js",
-            # "CX_RequireJS.min.js"
+        ]
+        writting_base_order = [
+            "UpdataJSFiles.js",
+            "before_RequireJS.min.js",
+            "CX_RequireJS.min.js"
         ]
         print(jsfiles)
-        print(jsfiles.get_by_name("BASE_INIT.js"))
-        # self.sheet.clear()
-        # jsfiles[2].write_in_sheet(self.sheet, 1, True)
+        row = 1
+        self.sheet.clear()
+        for i in writting_init_order:
+            jsfiles.get_by_name(i).write_in_sheet(self.sheet, row, False)
+            row += 1
+        for i in writting_base_order:
+            jsfiles.get_by_name(i).write_in_sheet(self.sheet, row, True)
+            row += 1

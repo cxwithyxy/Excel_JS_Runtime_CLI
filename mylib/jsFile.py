@@ -40,7 +40,6 @@ class JSFile():
 
     def write_in_sheet(self, sheet, y, need_encode = False):
         file_seek_offset = 32000
-        print(self.name)
         code_encoded = self.code if(not need_encode) else self.encode_code()
         loop_count = len(code_encoded) / file_seek_offset
         loop_count = math.ceil(loop_count)
