@@ -35,7 +35,6 @@ def get_all_js_path_from_src(src_path):
     while True:
         try:
             temp_js_path = next(walking)
-            print(temp_js_path)
             return_list.append(str(temp_js_path))
         except:
             break

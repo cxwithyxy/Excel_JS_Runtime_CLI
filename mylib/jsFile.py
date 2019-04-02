@@ -1,5 +1,7 @@
 #coding=utf-8
 
+import math
+
 class JSFile():
 
     name = None
@@ -37,7 +39,13 @@ class JSFile():
         self.name = self.name.replace(src_path, "")
 
     def write_in_sheet(self, sheet, y, need_encode = False):
+        file_seek_offset = 32000
+        print(self.name)
         code_encoded = self.code if(not need_encode) else self.encode_code()
-        print(code_encoded)
-        loop_count = len(code_encoded) / 32000
-        print(loop_count)
+        loop_count = len(code_encoded) / file_seek_offset
+        loop_count = math.ceil(loop_count)
+        for i in range(loop_count):
+            temp = code_encoded[i * file_seek_offset : (i + 1) * file_seek_offset]
+            sheet.range((y, i + 2)).value = temp
+        sheet.range((y, 1)).value = self.name
+
