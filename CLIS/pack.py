@@ -10,7 +10,7 @@ class base(CLIS.CLISCMDBASE.base):
 
     def run(self):
         argu = self.get_argu()
-        print argu
+        print(argu)
         xlsm_path = PJI.projIni().get_xlsm_full_path()
         XH.XlsmHub().set_xlsm_path(xlsm_path)
         XH.XlsmHub().open()

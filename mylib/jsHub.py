@@ -1,6 +1,6 @@
 #coding=utf-8
 
-import jsFile
+import mylib.jsFile as jsFile
 import mylib.path
 from multiprocessing.pool import ThreadPool as Pool
 
@@ -36,6 +36,7 @@ class JSHub():
 
     def read_js_file_from_src(self, src_path):
         jsss =  mylib.path.get_all_js_path_from_src(src_path)
+        print(jsss)
         def pool_do(ipath):
             js_file = jsFile.JSFile()
             js_file.load_js_file(ipath)
@@ -55,6 +56,6 @@ class JSHub():
             # "before_RequireJS.min.js",
             # "CX_RequireJS.min.js"
         ]
-        print jsfiles
+        print(jsfiles)
         self.sheet.clear()
-        jsfiles[2].write_in_sheet(self.sheet, 1, True)
+        # jsfiles[2].write_in_sheet(self.sheet, 1, True)

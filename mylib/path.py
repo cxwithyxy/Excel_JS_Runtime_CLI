@@ -8,7 +8,7 @@ def mkdir(path_from_argu):
     try:
         pathlib.Path.mkdir(pathlib.Path(the_path))
     except:
-        print path_from_argu + u" 文件夹已经存在了"
+        print(path_from_argu + u" 文件夹已经存在了")
         exit()
 
 def join_path(path_1, path_2):
@@ -34,7 +34,8 @@ def get_all_js_path_from_src(src_path):
     return_list = []
     while True:
         try:
-            temp_js_path = walking.next()
+            temp_js_path = next(walking)
+            print(temp_js_path)
             return_list.append(str(temp_js_path))
         except:
             break

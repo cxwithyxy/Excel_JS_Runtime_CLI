@@ -3,7 +3,7 @@
 import mylib.PythonSingleton.Singleton as SLT
 import xlwings as xw
 import mylib.path
-import jsHub
+import mylib.jsHub as jsHub
 
 class XlsmHub(SLT.Singleton):
 
