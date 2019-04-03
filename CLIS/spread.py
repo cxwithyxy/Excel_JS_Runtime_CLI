@@ -3,9 +3,8 @@
 import CLIS.CLISCMDBASE
 import mylib.projIni as PJI
 import mylib.xlsmHub as XH
-import create
+import CLIS.create as create
 import mylib.path
-import unipath
 
 class base(CLIS.CLISCMDBASE.base):
 
@@ -20,11 +19,11 @@ class base(CLIS.CLISCMDBASE.base):
 
     def spread_exist_xlsm(self, xlsm_path):
         if not mylib.path.is_exist(xlsm_path):
-            print xlsm_path + u" 文件不存在"
+            print(xlsm_path + u" 文件不存在")
             exit()
         proj_name = mylib.path.get_file_name_without_suffixs(xlsm_path)
         create.base().make_path(proj_name)
-        unipath.Path(xlsm_path).move(proj_name + "/" + xlsm_path)
+        mylib.path.move_path(xlsm_path, proj_name + "/" + xlsm_path)
         create.base().make_ini_file(proj_name)
         create.base().spread_xlsm(proj_name)
 

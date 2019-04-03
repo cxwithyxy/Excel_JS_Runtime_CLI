@@ -5,7 +5,7 @@ import pathlib
 import mylib.path
 import requests
 import mylib.projIni as PJI
-import spread
+import CLIS.spread as spread
 
 
 class base(CLIS.CLISCMDBASE.base):

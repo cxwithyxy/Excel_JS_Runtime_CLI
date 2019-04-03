@@ -1,21 +1,18 @@
 #coding=utf-8
 
 import argparse
-import Queue
+import queue
 import sys
 import CLIS.create
 import CLIS.spread
-
-# 设定python默认字符集
-reload(sys)
-sys.setdefaultencoding( "gbk" )
-
+import CLIS.pack
 
 parser = argparse.ArgumentParser()
-queue = Queue.Queue()
+myQueue = queue.Queue()
 
-queue.put(CLIS.create.base(parser).handle_run)
-queue.put(CLIS.spread.base(parser).handle_run)
+myQueue.put(CLIS.create.base(parser).handle_run)
+myQueue.put(CLIS.spread.base(parser).handle_run)
+myQueue.put(CLIS.pack.base(parser).handle_run)
 
-while not queue.empty():
-    queue.get()()
+while not myQueue.empty():
+    myQueue.get()()
