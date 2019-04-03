@@ -30,19 +30,21 @@ python Excel_JS_Runtime_CLI -spread myfirstproject.xlsm
 
 把 xlsm 文件 变成 工作文件夹
 
+
+
+#### 打包：把 javascript 打包到 xlsm 文件中
+
+```
+python Excel_JS_Runtime_CLI -pack here
+```
+
+当cd到工作文件夹中时，可以使用该命令 -pack here 把当前文件夹中的 src 文件夹中的 js 文件保存到 xlsm 文件
+
 ------
 
 
 
 ## 下面的还没有完成，在计划中
-
-#### 打包：把 javascript 打包到 xlsm 文件中
-
-```
-python Excel_JS_Runtime_CLI -pack myfristproject myfristproject.xlsm
-```
-
-
 
 #### 动态打包：每次 javascript 保存时，自动打包进 xlsm 文件中
 
