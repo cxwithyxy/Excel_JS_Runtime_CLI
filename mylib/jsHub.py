@@ -12,7 +12,7 @@ class JSHub():
     def __init__(self, sheet):
         self.sheet = sheet
 
-    def read_js_file(self, row):
+    def read_js_file(self, row, need_decode_check_func = None):
         name = self.get_js_name(row)
         if name == "None":
             return False
@@ -26,7 +26,10 @@ class JSHub():
             reading_str += temp
         js_file = jsFile.JSFile()
         js_file.name = name
-        js_file.decode_str_into_code(reading_str)
+        if need_decode_check_func != None and need_decode_check_func(name, reading_str):
+            js_file.decode_str_into_code(reading_str)
+        else:
+            js_file.code = reading_str
         return js_file
 
     def read_cell(self, row, col):

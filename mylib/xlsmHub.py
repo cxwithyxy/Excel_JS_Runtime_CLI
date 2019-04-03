@@ -28,15 +28,16 @@ class XlsmHub(SLT.Singleton):
         return self.xlsm_obj.sheets["BASE_CODE_LIB"]
     
     def output_js_file(self):
+        def check_need_decode(name, code):
+            return name != "BASE_INIT.js"
         js_saving_path = mylib.path.get_js_saving_path_base_on_xlsm(self.xlsm_path)
         row = 1
         while True:
-            temp_file = self.js_hub.read_js_file(row)
+            temp_file = self.js_hub.read_js_file(row, check_need_decode)
             if temp_file == False:
                 break
             row += 1
             temp_file.save(js_saving_path)
-        pass
 
     def input_js_file(self):
         js_src_path = mylib.path.get_js_saving_path_base_on_xlsm(self.xlsm_path)
