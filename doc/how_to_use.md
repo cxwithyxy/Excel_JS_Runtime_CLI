@@ -45,6 +45,6 @@ python Excel_JS_Runtime_CLI.py -pack here
 #### 动态打包：每次 javascript 保存时，自动打包进 xlsm 文件中
 
 ```
-python Excel_JS_Runtime_CLI.py -watch-pack myfristproject myfristproject.xlsm
+python Excel_JS_Runtime_CLI.py -watch_pack here
 ```
 
