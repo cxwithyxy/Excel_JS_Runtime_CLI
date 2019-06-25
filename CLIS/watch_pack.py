@@ -14,7 +14,6 @@ class base(CLIS.CLISCMDBASE.base):
     def run(self):
         argu = self.get_argu()
         if argu == "here":
-            print("222")
             self.file_change()
             # xlsm_path = PJI.projIni().get_xlsm_full_path()
             # XH.XlsmHub().set_xlsm_path(xlsm_path)
@@ -23,10 +22,9 @@ class base(CLIS.CLISCMDBASE.base):
             # XH.XlsmHub().close()
             return
     def file_change(self):
+        handler = win32api.FindFirstChangeNotification(mypath.abs_path(""), True, 0x00000010)
+        print(handler)
         while(True):
-            handler = win32api.FindFirstChangeNotification(mypath.abs_path(""), True, 0x00000010)
-            print(handler)
             kee = win32api.FindNextChangeNotification(handler)
-            print(kee)
             win32event.WaitForSingleObject(handler, -1)
 
