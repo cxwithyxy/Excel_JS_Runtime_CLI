@@ -1,0 +1,7 @@
+*.pyc
+aaa/
+.vscode/launch.json
+venv/
+.vscode/
+build/
+dist/
