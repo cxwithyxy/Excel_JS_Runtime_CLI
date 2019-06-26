@@ -19,8 +19,8 @@
 1. 构建工作文件夹（见命令说明）
 2. cd 进工作文件夹
 3. 激活动态打包（见命令说明）
-4. 操作（修改、新增、删除）工作文件夹中js文件，Excel_JS_Runtime_CLI 会自动把 js 文件写入 xlsm 中
-5. 此时可以对xlsm增加数据，就是 excel 的正常操作，同时你也可以在 xlsm 中调用你写的 js
+4. 操作（修改、新增、删除）工作文件夹中js文件，Excel_JS_Runtime_CLI 会自动把 [js 文件](doc/how_to_write_js.md)写入 xlsm 中
+5. 此时可以对xlsm增加数据，就是 excel 的正常操作，同时你也可以在 [xlsm 中调用](doc/how_to_call_js.md)你写的 js
 
 继续循环第4、5步，直到你满意，就可以 ctrl+s 保存这个xlsm，然后把 xlsm 发给你同事朋友，就算他们没有安装Excel_JS_Runtime_CLI，打开xlsm之后，你编写的js代码也会一样在他们电脑上运行
 
@@ -55,3 +55,8 @@ python Excel_JS_Runtime_CLI.py
 pyinstaller Excel_JS_Runtime_CLI.spec
 ```
 
+
+
+## 开发 Excel_JS_Runtime
+
+请移步到 [Excel_JS_Runtime 仓库](https://github.com/cxwithyxy/Excel_JS_Runtime)
