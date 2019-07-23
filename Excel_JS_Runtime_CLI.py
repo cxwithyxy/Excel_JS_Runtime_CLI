@@ -9,7 +9,7 @@ import CLIS.pack
 import CLIS.watch_pack
 
 parser = argparse.ArgumentParser()
-parser.description = "===== Excel_JS_Runtime_CLI ====="
+parser.description = "===== Excel_JS_Runtime_CLI v1.201907231125 ====="
 parser.epilog ="* MORE INFO: https://github.com/cxwithyxy/Excel_JS_Runtime_CLI"
 myQueue = queue.Queue()
 
