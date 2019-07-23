@@ -9,6 +9,7 @@ import mylib.path
 class base(CLIS.CLISCMDBASE.base):
 
     name = "spread"
+    help_str = "spread xlsm file and make some JS file here: -spread here"
 
     def run(self):
         argu = self.get_argu()
@@ -19,7 +20,7 @@ class base(CLIS.CLISCMDBASE.base):
 
     def spread_exist_xlsm(self, xlsm_path):
         if not mylib.path.is_exist(xlsm_path):
-            print(xlsm_path + u" 文件不存在")
+            print(xlsm_path + " file is not exists")
             exit()
         proj_name = mylib.path.get_file_name_without_suffixs(xlsm_path)
         create.base().make_path(proj_name)

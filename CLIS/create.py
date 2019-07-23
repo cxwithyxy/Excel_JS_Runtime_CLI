@@ -11,6 +11,7 @@ import CLIS.spread as spread
 class base(CLIS.CLISCMDBASE.base):
 
     name = "create"
+    help_str = "create a project: -create your_project_name"
 
     xlsm_download_url = "https://raw.githubusercontent.com/cxwithyxy/Excel_JS_Runtime/master/release/base.xlsm"
 

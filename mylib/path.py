@@ -8,7 +8,7 @@ def mkdir(path_from_argu):
     try:
         pathlib.Path.mkdir(pathlib.Path(the_path))
     except:
-        print(path_from_argu + u" 文件夹已经存在了")
+        print(path_from_argu + " project directory is exists")
         exit()
 
 def join_path(path_1, path_2):
