@@ -9,6 +9,7 @@ import mylib.path
 class base(CLIS.CLISCMDBASE.base):
 
     name = "spread"
+    help_str = "spread xlsm file and make some JS file here"
 
     def run(self):
         argu = self.get_argu()
