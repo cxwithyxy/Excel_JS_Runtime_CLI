@@ -7,7 +7,7 @@ import mylib.projIni as PJI
 class base(CLIS.CLISCMDBASE.base):
 
     name = "pack"
-    help_str = "pack xlsm here"
+    help_str = "pack xlsm here: -pack here"
 
     def run(self):
         argu = self.get_argu()

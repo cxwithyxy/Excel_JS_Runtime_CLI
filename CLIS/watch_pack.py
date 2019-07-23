@@ -13,7 +13,7 @@ import CLIS.pack as CLIS_PACK
 class base(CLIS.CLISCMDBASE.base):
 
     name = "watch_pack"
-    help_str = "watch and wait JS file change than pack in xlsm file"
+    help_str = "watch and wait JS file change than pack in xlsm file: -watch_pack here"
     can_pack = False
 
     def run(self):
