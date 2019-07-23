@@ -6,10 +6,11 @@ class base(SLT.Singleton):
     
     parser = None
     name = None
+    help_str = ""
 
     def __Singleton_Init__(self, parser = None):
         self.parser = parser
-        parser.add_argument("-" + self.name)
+        parser.add_argument("-" + self.name, help = self.help_str)
         
     def get_argu(self):
         argu = vars(self.parser.parse_args())
@@ -20,9 +21,11 @@ class base(SLT.Singleton):
             return False
         return True
 
-    def handle_run(self):
+    def handle_run(self,) -> bool:
         if self.is_match():
             self.run()
+            return True
+        return False
 
     def run(self):
         raise "function \"run\" mast be rewritten"
